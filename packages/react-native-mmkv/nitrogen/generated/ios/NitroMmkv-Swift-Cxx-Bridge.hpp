@@ -17,11 +17,20 @@ namespace NitroMmkv { class HybridMMKVPlatformContextSpec_cxx; }
 
 // Include C++ defined types
 #include "HybridMMKVPlatformContextSpec.hpp"
+#include <NitroModules/NitroDefines.hpp>
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
 #include <optional>
 #include <string>
+
+// The generated bridge uses NON_NULL/NULLABLE markers that may be missing.
+#ifndef NON_NULL
+#define NON_NULL
+#endif
+#ifndef NULLABLE
+#define NULLABLE
+#endif
 
 /**
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
